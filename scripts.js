@@ -9,12 +9,12 @@ var ctx = document.getElementById("game").getContext("2d"),
     deltaX = 1,
     backgroundData = {},
     catData = {},
-    gravity = 2,
+    gravity = 1,
     isJumping = false,
-    verticalSpeedAtJump = 10,
+    verticalSpeedAtJump = 12,
     xStartJump = 0
     x = 0
-    catCoordinates = {x: 80, y: 105, y0: 105}
+    catCoordinates = {x: 80, y: 30, y0: 30}
 
     backgroundCanvas.width = canvasWidth
     backgroundCanvas.height = canvasHeight
@@ -64,13 +64,12 @@ var ctx = document.getElementById("game").getContext("2d"),
       backgroundData = backgroundCtx.getImageData(canvasWidth-scrollVal, 0, scrollVal, canvasHeight)
       
       isJumping && setCatCoordinates()
-      console.log(isJumping)
       ctx.putImageData(backgroundData, 0, 0 ,0 ,0 ,scrollVal, canvasWidth)
       backgroundData = backgroundCtx.getImageData(0,0,canvasWidth-scrollVal, canvasHeight)
       ctx.putImageData(backgroundData, scrollVal,0,0,0,canvasWidth-scrollVal, canvasWidth)
       window.requestAnimationFrame(draw);
 
-      ctx.drawImage(cat, catCoordinates.x, catCoordinates.y, 80, 80)
+      ctx.drawImage(cat, catCoordinates.x, catCoordinates.y, 200, 200)
   }
 
   init()
