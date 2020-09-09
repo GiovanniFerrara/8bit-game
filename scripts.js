@@ -6,12 +6,12 @@ var ctx = document.getElementById("game").getContext("2d"),
     canvasWidth = 300,
     canvasHeight = 240,
     scrollVal = 0,
-    deltaX = 1,
+    deltaX = 2,
     backgroundData = {},
     catData = {},
-    gravity = 1,
+    gravity = 0.2,
     isJumping = false,
-    verticalSpeedAtJump = 12,
+    verticalSpeedAtJump = 6,
     xStartJump = 0
     x = 0
     catCoordinates = {x: 80, y: 30, y0: 30}
@@ -31,7 +31,7 @@ var ctx = document.getElementById("game").getContext("2d"),
         }
     }
 
-    document.addEventListener('swiped-up', function(e) {
+    document.addEventListener('click', function(e) {
       isJumping = true
       xStartJump = x
     });
