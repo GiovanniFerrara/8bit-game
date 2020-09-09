@@ -30,7 +30,12 @@ var ctx = document.getElementById("game").getContext("2d"),
           xStartJump = x
         }
     }
-  
+
+    document.addEventListener('swiped-up', function(e) {
+      isJumping = true
+      xStartJump = x
+    });
+
     function init(){
       background.src = "bg.jpeg"
       cat.src = "cat.png"
