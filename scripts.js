@@ -2,6 +2,7 @@ var ctx = document.getElementById("game").getContext("2d"),
     backgroundCanvas = document.createElement("canvas"),
     background = new Image(),
     cat = new Image(),
+    jumpAudio = new Audio("jump.mpg"),
     backgroundCtx = backgroundCanvas.getContext("2d"),
     canvasWidth = 300,
     canvasHeight = 240,
@@ -20,21 +21,23 @@ var ctx = document.getElementById("game").getContext("2d"),
     backgroundCanvas.height = canvasHeight
   
     background.onload = loadBackground
-
-    document.onkeydown = checkKey;
+    document.onkeydown = checkKey
 
     function checkKey(e) {
         e = e || window.event;
         if (e.keyCode == '38') {
           isJumping = true
           xStartJump = x
+          jumpAudio.play()
         }
     }
 
     document.addEventListener('click', function(e) {
       isJumping = true
       xStartJump = x
+      jumpAudio.play()
     });
+
 
     function init(){
       background.src = "bg.jpeg"
