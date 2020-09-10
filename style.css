@@ -1,6 +1,15 @@
 body{
   background: #000;
+  font-family: 'Press Start 2P', cursive;
+  color: #FFF;
 }
+
+.header{
+  font-size: 15px;
+  text-align: center;
+  padding: 30px;
+}
+
 #game{
   border: 1px solid black;
   margin: auto;
